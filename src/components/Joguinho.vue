@@ -21,14 +21,11 @@
       <v-col
         :align="right"
         cols="2"
-        v-for="upgrade in upgrades" :key="upgrade.id"
+        v-for="upgrade in upgrades" :key="upgrade[0]"
       >
         <v-row>
           <UpgradeButton
-            :name="upgrade.name"
-            :img_src="upgrade.imgSrc"
-            :description="upgrade.description"
-            :price="upgrade.price"
+            :upgradeId="upgrade[0]"
           />
         </v-row>
       </v-col>
@@ -39,6 +36,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import UpgradeButton from './UpgradeButton.vue'
+import { game, Upgrade } from '@/game/Game.ts'
 
 @Component({
   components: {
@@ -48,22 +46,7 @@ import UpgradeButton from './UpgradeButton.vue'
 export default class Joguinho extends Vue {
   @Prop() private title!: string;
 
-  private upgrades: Array<object> = [
-    {
-      id: 1,
-      name: 'Adesivo do Palmeiras',
-      imgSrc: '',
-      description: 'Esse corsa SONHO',
-      price: 0.5
-    },
-    {
-      id: 2,
-      name: 'Adesivo do Flamengo',
-      imgSrc: '',
-      description: 'FLAMENGOOO',
-      price: 0.3
-    }
-  ]
+  private upgrades: Map<string, Upgrade> = game.upgrades;
 }
 </script>
 
