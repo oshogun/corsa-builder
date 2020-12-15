@@ -27,12 +27,12 @@ export class Game {
     ['adespalm', {
       name: 'Adesivo do Palmeiras',
       description: 'Esse corsa SONHO',
-      price: 50
+      price: 0.5
     }],
     ['adesfla', {
       name: 'Adesivo do Flamengo',
       description: 'O MENGÃO VOLTOU',
-      price: 30
+      price: 0.3
     }],
     [
       'custombuza', {
