@@ -4,7 +4,7 @@
       <img :src="upgrade.imgSrc" width="32" height="32"/>
       <p>
         <b>{{ upgrade.name }}</b>
-        (Preço: {{ currency(upgrade.price) }})
+        (Preço: {{ currency }})
       </p>
       <p>
         {{ upgrade.description }}
@@ -15,23 +15,25 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
+
 import { game, Upgrade } from '@/game/Game.ts'
 import { currency as localCurrency } from '@/plugins/i18n.ts'
 
 @Component
 export default class UpgradeButton extends Vue {
-  @Prop() private upgradeId!: string;
+  @Prop({ required: true }) private readonly upgradeId!: string;
+  private curr = 'loading...';
 
   get upgrade (): Upgrade {
-    const up = (
-      game.upgrades.get(this.upgradeId) ||
-      { name: 'dummy', description: 'dummy', price: 0 }
-    )
-    return up
+    return game.upgrades.get(this.upgradeId) as Upgrade
   }
 
-  currency (price: number) {
-    return localCurrency(price)
+  get currency () {
+    localCurrency(this.upgrade.price)
+      .then(res => {
+        this.curr = res
+      })
+    return this.curr
   }
 }
 </script>
