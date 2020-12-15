@@ -82,6 +82,54 @@ export const messages = {
       name: 'Super neon decal',
       description: 'The best neon decal you always wished for ;)',
       imgSrc: require('@/assets/verdao.png')
+    },
+
+    adesfla: {
+      name: 'Red neon decal',
+      description: 'makes you look menacing',
+      imgSrc: require('@/assets/mengao.png')
+    },
+
+    custombuza: {
+      name: 'Custom horn sounds',
+      description: 'Plays 3 different tunes',
+      imgSrc: require('@/assets/buzina.png')
+    },
+
+    sonzao: {
+      name: 'Audio System',
+      description: '5 subwoofers to make sure the bass hits just right',
+      imgSrc: require('@/assets/audio.png')
+    },
+
+    bodykit: {
+      name: 'Lowered Body Kit',
+      description: 'Makes your card scrape the asphalt',
+      imgSrc: require('@/assets/body.png')
+    },
+
+    rodas: {
+      name: 'Custom Wheels',
+      description: 'Pimp your corsa with some nice Enkei PF01 Black 5x114,3 17x9 ET35',
+      imgSrc: require('@/assets/roda.png')
+    },
+
+    motortunado1: {
+      name: 'Engine upgrade (stage 1)',
+      description: 'It is still corsinha\'s 1.6 motor, but with some nice adjustments',
+      imgSrc: require('@/assets/motor.png')
+    },
+
+    turbina1: {
+      name: 'Turbina (estagio 1)',
+      description: 'Basic single-turbo so you can feel that TSCHHH when changing gears. Powerfull, but laggier than dial-up internet',
+      imgSrc: require('@/assets/turbina1.png')
+    },
+
+    turbina2: {
+      name: 'Turbine (estagio 2)',
+      description: 'Twin-turbo Corsa. Now we\'re serious.',
+      imgSrc: require('@/assets/turbina2.png')
     }
   }
 }
