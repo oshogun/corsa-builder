@@ -104,7 +104,7 @@ export const messages = {
 
     bodykit: {
       name: 'Lowered Body Kit',
-      description: 'Makes your card scrape the asphalt',
+      description: 'Makes your car scrape the asphalt',
       imgSrc: require('@/assets/body.png')
     },
 
