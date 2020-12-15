@@ -37,6 +37,7 @@ export class Game {
   ]);
 
   corsa: Corsa = new Corsa();
+  language = 'pt-BR';
 }
 
 export const game = new Game()
