@@ -1,13 +1,13 @@
 <template>
   <v-container>
     <v-row>
-      <img :src="upgrade.imgSrc" width="32" height="32"/>
+      <img :src="$t(upgradeId).imgSrc" width="32" height="32"/>
       <p>
-        <b>{{ upgrade.name }}</b>
+        <b>{{ $t(upgradeId).name }}</b>
         (Preço: {{ currency }})
       </p>
       <p>
-        {{ upgrade.description }}
+        {{ $t(upgradeId).description }}
       </p>
     </v-row>
   </v-container>
