@@ -3,11 +3,11 @@
     <v-row>
       <img :src="imgSrc" width="32" height="32"/>
       <p>
-        <b>{{ name }}</b>
-        ({{ localPrice }})
+        <b>{{ upgrade.name }}</b>
+        (Preço: {{ localPrice(upgrade.price) }})
       </p>
       <p>
-        {{ description }}
+        {{ upgrade.description }}
       </p>
     </v-row>
   </v-container>
@@ -15,18 +15,24 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
+import { game, Upgrade } from '@/game/Game.ts'
 
 @Component
 export default class UpgradeButton extends Vue {
-  @Prop() private name!: string;
-  @Prop() private imgSrc!: string;
-  @Prop() private description!: string;
-  @Prop() private price!: number;
+  @Prop() private upgradeId!: string;
 
-  get localPrice (): string {
+  get upgrade (): Upgrade {
+    const up = (
+      game.upgrades.get(this.upgradeId) ||
+      { name: 'dummy', description: 'dummy', price: 0 }
+    )
+    return up
+  }
+
+  localPrice (price: number): string {
     return new Intl.NumberFormat('pt-BR',
       { style: 'currency', currency: 'BRL' }
-    ).format(this.price)
+    ).format(price)
   }
 }
 </script>
