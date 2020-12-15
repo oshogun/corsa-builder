@@ -3,14 +3,14 @@
     class="hello grey lighten-5">
     <v-row>
       <v-col>
-        <h1>{{ title }}</h1>
+        <h1>{{ $t('title') }}</h1>
         <p>
-          The amazing Corsa Power-Builder.
+          {{ $t('description') }}
         </p>
       </v-col>
     </v-row>
     <v-row
-      :align="align"
+      align="center"
       no-gutters>
       <v-col
         cols="12"
@@ -36,9 +36,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
-import UpgradeButton from './UpgradeButton.vue'
+import { Component, Vue } from 'vue-property-decorator'
 import { game, Upgrade } from '@/game/Game.ts'
+import UpgradeButton from './UpgradeButton.vue'
 
 @Component({
   components: {
@@ -46,8 +46,6 @@ import { game, Upgrade } from '@/game/Game.ts'
   }
 })
 export default class Joguinho extends Vue {
-  @Prop() private title!: string;
-
   private upgrades: Map<string, Upgrade> = game.upgrades;
 }
 </script>
