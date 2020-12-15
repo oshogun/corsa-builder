@@ -9,25 +9,27 @@
         </p>
       </v-col>
     </v-row>
-    <v-row no-gutters>
+    <v-row
+      :align="align"
+      no-gutters>
       <v-col
-        :align="left"
         cols="12"
+        md="6"
+        align-self="start"
       >
         <v-card>
           Hehe
         </v-card>
       </v-col>
       <v-col
-        :align="right"
-        cols="2"
-        v-for="upgrade in upgrades" :key="upgrade[0]"
+        cols="12"
+        md="6"
+        align-self="end"
       >
-        <v-row>
-          <UpgradeButton
-            :upgradeId="upgrade[0]"
-          />
-        </v-row>
+        <UpgradeButton
+          v-for="upgrade in upgrades" :key="upgrade[0]"
+          :upgradeId="upgrade[0]"
+        />
       </v-col>
     </v-row>
   </v-container>
