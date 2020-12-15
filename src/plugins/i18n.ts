@@ -3,7 +3,7 @@ import VueI18n from 'vue-i18n'
 
 Vue.use(VueI18n)
 
-export const messages: {[lang: string]: {[key: string]: string}} = {
+export const messages = {
   'pt-BR': {
     meta: 'pt-BR',
     countryCode: 'br',
@@ -12,7 +12,61 @@ export const messages: {[lang: string]: {[key: string]: string}} = {
     title: 'Capotador de Corsa',
     description: 'O mais incrível capotador de corsa do mundo. Já nas bancas!',
 
-    currency: 'BRL'
+    currency: 'BRL',
+
+    adespalm: {
+      name: 'Adesivo do Palmeiras',
+      description: 'Esse corsa SONHO',
+      imgSrc: require('@/assets/verdao.png')
+    },
+
+    adesfla: {
+      name: 'Adesivo do Flamengo',
+      description: 'O MENGÃO VOLTOU',
+      imgSrc: require('@/assets/mengao.png')
+    },
+
+    custombuza: {
+      name: 'Buzina personalizada',
+      description: 'Toca 3 musiquinha diferente',
+      imgSrc: require('@/assets/buzina.png')
+    },
+
+    sonzao: {
+      name: 'Sistema de audio',
+      description: '5 subwoofer pra dar grave e bater certo',
+      imgSrc: require('@/assets/audio.png')
+    },
+
+    bodykit: {
+      name: 'Body Kit Rebaixadão',
+      description: 'Chega a raspar no asfalto',
+      imgSrc: require('@/assets/body.png')
+    },
+
+    rodas: {
+      name: 'Rodas customizadas',
+      description: 'Botar uns rodão Enkei PF01 Black 5x114,3 17x9 ET35 no corsinha',
+      imgSrc: require('@/assets/roda.png')
+    },
+
+    motortunado1: {
+      name: 'Melhorias no motor (estagio 1)',
+      description: 'Continua sendo o motor 1.6 do corsinha, mas dando aquela regulada nice',
+      imgSrc: require('@/assets/motor.png')
+    },
+
+    turbina1: {
+      name: 'Turbina (estagio 1)',
+      description: 'Single turbo basicão pra dar aquele TSCHHH quando passa as marcha. Potente, mas tem mais lag que internet discada',
+      imgSrc: require('@/assets/turbina1.png')
+    },
+
+    turbina2: {
+      name: 'Turbina (estagio 2)',
+      description: 'Corsa twin-turbo. Agora o bagulho ficou sério.',
+      imgSrc: require('@/assets/turbina2.png')
+    }
   },
   'en-US': {
     meta: 'en-US',
@@ -22,7 +76,13 @@ export const messages: {[lang: string]: {[key: string]: string}} = {
     title: 'Corsa-Capoteur',
     description: 'The amazing Corsa Power-Builder.',
 
-    currency: 'USD'
+    currency: 'USD',
+
+    adespalm: {
+      name: 'Super neon decal',
+      description: 'The best neon decal you always wished for ;)',
+      imgSrc: require('@/assets/verdao.png')
+    }
   }
 }
 
@@ -68,7 +128,7 @@ async function corsaRatio (currency: string) {
 }
 
 for (const lang in messages) {
-  const currency: string = messages[lang].currency
+  const currency: string = messages[lang as keyof typeof messages].currency
   corsaRatio(currency)
     .then(res => console.log(`Pre-Loaded corsa value: ${res} (${currency})`))
     .catch(err => console.error(`Error loading corsa value: ${err}`))
