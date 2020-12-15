@@ -6,17 +6,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [10.x] # Only run the 10.x build
+
     steps:
       - uses: actions/checkout@v2
         with:
           persist-credentials: false
-        # - name: Use Node.js ${{ matrix.node-version }}
-        #   uses: actions/setup-node@v1
-        #   with:
-        #     node-version: ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
       - run: npm install -g yarn
       - run: yarn install
-      - run: yarn build
+      - run: npm run build --if-present
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.1
         with:
