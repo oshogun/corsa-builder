@@ -12,6 +12,7 @@ export const messages = {
     title: 'Capotador de Corsa',
     description: 'O mais incrível capotador de corsa do mundo. Já nas bancas!',
 
+    money: 'Carteira',
     currency: 'BRL',
 
     'cmd-capoteur': 'Capotar o corsa',
