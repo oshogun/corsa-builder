@@ -30,7 +30,7 @@
                     justify="center"
                   >
                     <v-col>
-                      <img :src="img-corsa-url"/>
+                      <img :src="$t('img-corsa-url')"/>
                     </v-col>
                   </v-row>
                 </v-container>

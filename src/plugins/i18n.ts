@@ -15,7 +15,7 @@ export const messages = {
     currency: 'BRL',
 
     'cmd-capoteur': 'Capotar o corsa',
-    'img-corsa-url': 'AQUI ALEXIS',
+    'img-corsa-url': require('@/assets/corsapixel.png'),
 
     adespalm: {
       name: 'Adesivo do Palmeiras',
