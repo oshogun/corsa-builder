@@ -76,7 +76,7 @@ export const messages = {
     countryCode: 'us',
     countryName: 'USA',
 
-    title: 'Corsa-Capoteur',
+    title: 'Corsa Flipper',
     description: 'The amazing Corsa Power-Builder.',
 
     currency: 'USD',
@@ -124,7 +124,7 @@ export const messages = {
     },
 
     turbina1: {
-      name: 'Turbina (estagio 1)',
+      name: 'Turbine (estagio 1)',
       description: 'Basic single-turbo so you can feel that TSCHHH when changing gears. Powerfull, but laggier than dial-up internet',
       imgSrc: require('@/assets/turbina1.png')
     },
