@@ -14,6 +14,9 @@ export const messages = {
 
     currency: 'BRL',
 
+    'cmd-capoteur': 'Capotar o corsa',
+    'img-corsa-url': 'AQUI ALEXIS',
+
     adespalm: {
       name: 'Adesivo do Palmeiras',
       description: 'Esse corsa SONHO',

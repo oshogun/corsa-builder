@@ -12,18 +12,34 @@
     <v-row
       align="center"
     >
-      <v-col
-        md="6"
-        align-self="start"
-      >
+      <v-col>
         <v-card>
-          Hehe
+          <v-container>
+            <v-row>
+              <v-col>
+                <button
+                  class="btn btn-primary"
+                >
+                  {{ $t('cmd-capoteur') }}
+                </button>
+              </v-col>
+              <v-col>
+                <v-container fill-height fluid>
+                  <v-row
+                    align="center"
+                    justify="center"
+                  >
+                    <v-col>
+                      <img :src="img-corsa-url"/>
+                    </v-col>
+                  </v-row>
+                </v-container>
+              </v-col>
+            </v-row>
+          </v-container>
         </v-card>
       </v-col>
-      <v-col
-        md="6"
-        align-self="end"
-      >
+      <v-col>
         <UpgradeButton
           v-for="upgrade in upgrades" :key="upgrade[0]"
           :upgradeId="upgrade[0]"
