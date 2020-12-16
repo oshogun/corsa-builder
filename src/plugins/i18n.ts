@@ -81,13 +81,13 @@ export const messages = {
     adespalm: {
       name: 'Super neon decal',
       description: 'The best neon decal you always wished for ;)',
-      imgSrc: require('@/assets/verdao.png')
+      imgSrc: require('@/assets/clover.png')
     },
 
     adesfla: {
       name: 'Red neon decal',
-      description: 'makes you look menacing',
-      imgSrc: require('@/assets/mengao.png')
+      description: 'makes you look suspicious',
+      imgSrc: require('@/assets/sus.png')
     },
 
     custombuza: {
