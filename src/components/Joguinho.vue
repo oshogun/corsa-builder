@@ -11,9 +11,8 @@
     </v-row>
     <v-row
       align="center"
-      no-gutters>
+    >
       <v-col
-        cols="12"
         md="6"
         align-self="start"
       >
@@ -22,7 +21,6 @@
         </v-card>
       </v-col>
       <v-col
-        cols="12"
         md="6"
         align-self="end"
       >

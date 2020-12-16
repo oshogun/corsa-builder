@@ -1,16 +1,27 @@
 <template>
-  <v-container>
-    <v-row>
-      <img :src="$t(upgradeId).imgSrc" width="32" height="32"/>
-      <p>
-        <b>{{ $t(upgradeId).name }}</b>
-        (Preço: {{ currency }})
-      </p>
-      <p>
-        {{ $t(upgradeId).description }}
-      </p>
-    </v-row>
-  </v-container>
+  <button
+    class="btn btn-dark"
+  >
+    <v-container>
+      <v-row>
+        <v-col>
+          <img :src="$t(upgradeId).imgSrc"/>
+        </v-col>
+        <v-col
+          align="left"
+          cols="8"
+        >
+          <p>
+            <b>{{ $t(upgradeId).name }}</b>
+            ({{ currency }})
+          </p>
+          <p>
+            {{ $t(upgradeId).description }}
+          </p>
+        </v-col>
+      </v-row>
+    </v-container>
+  </button>
 </template>
 
 <script lang="ts">
@@ -40,16 +51,13 @@ export default class UpgradeButton extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.upgrade-box {
-  display: block;
-  background: lightgray;
-  border: solid 1px black;
-  border-radius: 1em;
-  padding: 1em;
+button {
+  margin: 0 0 1em;
 }
 
-.upgrade-box:hover {
-  cursor: pointer;
-  background: #ddd;
+img {
+  border-radius: 50%;
+  border: solid 2px lightgray;
+  width: 100%;
 }
 </style>
